@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 
+// Import images as modules for better Vite handling
+import image1 from '/image1.png';
+import image2 from '/image2.png';
+import image3 from '/image3.png';
+import image4 from '/image4.png';
+
 interface FloatingImage {
   id: number;
   src: string;
@@ -21,8 +27,8 @@ const AnimatedBackground: React.FC = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Define image files inside useEffect to avoid dependency issues
-    const imageFiles = ['/image1.png', '/image2.png', '/image3.png', '/image4.png'];
+    // Use imported image modules
+    const imageFiles = [image1, image2, image3, image4];
 
     // Initialize floating images with CSS animations instead of canvas
     const initializeImages = () => {
