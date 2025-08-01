@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Enhanced backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom gradient text */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Enhanced button hover effects */
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Card hover effects */
+.group:hover {
+  transform: translateY(-4px);
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .text-4xl {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .text-6xl {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* Custom shadow utilities */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.shadow-glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Floating background images */
+.floating-image {
+  will-change: transform, opacity;
+  transform-origin: center;
+  filter: blur(1px) brightness(0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Water-like base animations */
+@keyframes waterFloat {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% { 
+    transform: translate(15px, -20px) scale(1.05) rotate(120deg);
+  }
+  66% { 
+    transform: translate(-20px, 15px) scale(0.95) rotate(240deg);
+  }
+}
+
+@keyframes waterFade {
+  0%, 100% { 
+    opacity: 0.1;
+    filter: blur(1px) brightness(0.7);
+  }
+  50% { 
+    opacity: 0.25;
+    filter: blur(0.5px) brightness(0.9);
+  }
+}
+
+@keyframes gentleRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced backdrop effects for content over animated background */
+.backdrop-enhanced {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.3);
+}
